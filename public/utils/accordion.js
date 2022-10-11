@@ -98,4 +98,3 @@ class Accordion {
     }
 }
 
-export default  Accordion;

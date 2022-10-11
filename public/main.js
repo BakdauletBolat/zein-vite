@@ -1,14 +1,3 @@
-import Accordion from "./src/utils/accordion.js";
-
-
-
-import Swiper, { Navigation, Pagination } from 'swiper';
-// import Swiper and modules styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-
 const accordion = new Accordion('.accordion',{
 });
 
@@ -24,7 +13,6 @@ const pagination = {
 // init Swiper:
 const swiper = new Swiper('.swiper-about-us', {
   // configure Swiper to use modules
-  modules: [Navigation, Pagination],
   pagination: {
     el: '.swiper-pagination',
     bulletClass: 'bslider-bullet',
