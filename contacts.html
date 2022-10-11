@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/icons.css">
+  <title>Zein</title>
+  <script type="module" crossorigin src="/assets/main.9eaad8b1.js"></script>
+  <link rel="stylesheet" href="/assets/main.3e09bd2c.css">
+</head>
+
+<body>
+  <div x-data="{
+    isModal: false,
+    isOpenHeader: false,
+    type: undefined
+  }" class="wrapper text-[#00161E]" :class="{
+    'overflow-hidden h-[100vh]': isOpenHeader
+  }">
+    <!-- Шапка -->
+
+    <div class="h-[100vh] bg-[#001B2599] backdrop-blur-sm  hidden  w-full fixed top-0 left-0 z-[1000000]" :class="{
+      'block': isModal,
+      'hidden': !isModal
+    }">
+      <i class="icon-close text-[#C0C0C0] text-2xl cursor-pointer absolute right-4 top-4"
+        x-on:click="isModal=!isModal"></i>
+      <div class="px-4 absolute  lg:max-w-md top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-full ">
+        <div class="bg-white rounded-2xl w-full px-5 py-8">
+          <form action="/" class="flex flex-col">
+            <h2 class="font-medium text-lg text-center">Записаться на приём</h2>
+            <p class="text-sm text-[#828282] text-center mt-4">Оставьте свои данные и наши специалисты свяжутся с вами
+              в ближайшее время</p>
+            <input required name="name" class="mt-6 h-[49px] flex pl-4 rounded-xl border-2 border-[#EBEBEB]" type="text"
+              placeholder="Введите имя">
+            <input required name="phone" class="mt-5 h-[49px] flex pl-4 rounded-xl border-2 border-[#EBEBEB]" type="text"
+              placeholder="Номер телефона">
+            <select required name="type" class="mt-5 h-[49px] flex pl-4 rounded-xl border-2 border-[#EBEBEB]">
+              <option>
+                Выберите томография
+              </option>
+              <option :selected="type == 'МРТ — магнитно-резонансная томография'"
+                value="МРТ — магнитно-резонансная томография">
+                МРТ — магнитно-резонансная томография
+              </option>
+              <option :selected="type == 'КТ — компьютерная томография'" value="КТ — компьютерная томография">
+                КТ — компьютерная томография
+              </option>
+            </select>
+            <button type="submit" class="button mt-6 rounded-2xl">Записаться</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <header class="drop-shadow-xl fixed  w-full z-10 ">
+      <header class="header relative  w-full bg-white z-20  ">
+        <div class="flex justify-between items-center container mx-auto px-4 py-3">
+          <a href="/"><img class="w-20 lg:w-[124px]" src="icons/logo.svg" /></a>
+          <nav class="hidden lg:flex gap-12">
+            <a href="services.html" class="no-underline py-7 text-black">Услуги</a>
+            <a href="about-us.html" class="no-underline py-7 text-black" href=""> О нас</a>
+            <a href="contacts.html" class="no-underline py-7 text-black" href="">Контакты</a>
+          </nav>
+          <button x-on:click="isModal = true" class="hidden w-auto bg-primary lg:inline-block button">Записаться
+            на приём</button>
+          <i x-on:click="isOpenHeader = !isOpenHeader" x-bind:class="{
+            'icon-menu': !isOpenHeader,
+            'icon-close': isOpenHeader
+          }" class="text-2xl lg:hidden cursor-pointer"></i>
+        </div>
+      </header>
+      <header :class="{
+        'translate-y-0': isOpenHeader,
+        '-translate-y-full': !isOpenHeader
+      }"
+        class="lg:relative lg:hidden lg:h-auto w-full h-[100vh] mx-auto px-4 transition-transform duration-300 ease-out  absolute left-0 top-0 z-10 bg-white">
+        <div class="flex  flex-col gap-5 mt-[96px]">
+          <div class="text-sm  flex gap-2">
+            <i class="icon-map text-[#828282]"></i>
+            <p class="text-[#828282]">г. Петропавловск</p>
+          </div>
+          <div class="text-sm flex gap-2">
+            <i class="icon-glasses text-[#828282]"></i>
+            <p href="">Версия для слобовидящих</p>
+          </div>
+        </div>
+        <div class="border-b border-b-[#EBEBEB] my-6"></div>
+        <div class="flex flex-col gap-5 ">
+          <a class="text-[#00161E] no-underline" href="services.html">Услуги</a>
+          <a class="text-[#00161E] no-underline" href="about-us.html">О нас</a>
+          <a class="text-[#00161E] no-underline" href="contacts.html">Контакты</a>
+        </div>
+      </header>
+    </header>
+
+    <div class=" h-[56px] lg:h-[104px]"></div>
+
+    <!-- Конец -->
+    
+    <!-- Блок 4
+    Контакты -->
+
+    <div class="contacts container mx-auto py-10 px-4 lg:mt-8">
+      <h2 class="main-title pt-0">Контакты</h2>
+      <div class="accordion border-t last:border-b border-[#EBEBEB]">
+        <div class="accordion_control text-lg py-5 flex items-center justify-between">
+          <p>Контакты услуги «Кабинет магнитно-резонансной томографии (МРТ)»</p>
+          <i class="accordion_button icon-plus text-primary"></i>
+        </div>
+        <div class="accordion_content flex flex-col lg:flex-row">
+          <div class="contacts_list flex flex-col gap-7 mb-7">
+            <article class="contacts_item flex gap-4 items-start">
+              <i class="icon-map text-base text-primary"></i>
+              <div class="flex flex-col gap-3">
+                <h3 class="text-base font-medium">Адрес</h3>
+                <p>г. Петропавловск, улица М. Ауэзова, 133</p>
+              </div>
+            </article>
+            <article class="contacts_item flex gap-4 items-start">
+              <i class="icon-clock text-base text-primary"></i>
+              <div class="flex flex-col gap-3">
+                <h3 class="text-base font-medium">Время работы</h3>
+                <p>с 07:00 до 05:00 (24/7)</p>
+              </div>
+            </article>
+
+            <article class="contacts_item flex gap-4 items-start">
+              <i class="icon-phone text-base text-primary"></i>
+              <div class="flex flex-col gap-3">
+                <h3 class="text-base  font-medium">Телефоны для записи</h3>
+                <a href="tel:+7 771 029 00 33">+7 771 029 00 33
+                  50–19–53/54</a>
+                <a href="tel:+7 771 029 00 33
+                  50–19–53/54">+7 771 029 00 33
+                  50–19–53/54</a>
+              </div>
+            </article>
+            <article class="contacts_item flex gap-4 items-start">
+              <i class="icon-plus text-base !text-white"></i>
+              <div class="flex flex-col gap-3">
+                <h3 class="text-base font-medium">Call-центр</h3>
+                <p>Пн-Пт: с 08:00 до 22:00 <br>
+                  Сб: с 08:00 до 20:00 <br>
+                  Вс: выходной</p>
+              </div>
+            </article>
+            <article class="contacts_item flex gap-4 items-start">
+              <i class="icon-plus text-base text-white"></i>
+              <div class="flex flex-col gap-3">
+                <h3 class="text-base font-medium">Соц. сети</h3>
+                <i class="icon-instagram text-2.5xl text-[#003459]"></i>
+              </div>
+            </article>
+          </div>
+          <div class="map pb-4">
+            <iframe class="h-[412px] rounded-2xl"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2296.3829157093237!2d69.13119191624013!3d54.86108708032436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43b23a3c21ee7e33%3A0x12be0413b17ea909!2sOnko%20Dispanser!5e0!3m2!1sen!2skz!4v1664532526653!5m2!1sen!2skz"
+              width="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="accordion border-t last:border-b border-[#EBEBEB]">
+        <div class="accordion_control text-lg py-5 flex items-center justify-between">
+          <p>Контакты услуги «Кабинет компьютерной томографии (КТ)»</p>
+          <i class="accordion_button icon-plus text-primary"></i>
+        </div>
+        <div class="accordion_content flex flex-col lg:flex-row">
+          <div class="contacts_list flex flex-col gap-7 mb-7">
+            <article class="contacts_item flex gap-4 items-start">
+              <i class="icon-map text-base text-primary"></i>
+              <div class="flex flex-col gap-3">
+                <h3 class="text-base font-medium">Адрес</h3>
+                <p>г. Петропавловск, улица Театральная, 49 «А», ТОО «Есиль-диагностик»</p>
+              </div>
+            </article>
+            <article class="contacts_item flex gap-4 items-start">
+              <i class="icon-clock text-base text-primary"></i>
+              <div class="flex flex-col gap-3">
+                <h3 class="text-base font-medium">Время работы</h3>
+                <p>с 07:00 до 05:00 (24/7)</p>
+              </div>
+            </article>
+
+            <article class="contacts_item flex gap-4 items-start">
+              <i class="icon-phone text-base text-primary"></i>
+              <div class="flex flex-col gap-3">
+                <h3 class="text-base  font-medium">Телефоны для записи</h3>
+                <a href="tel:63-00-89">63-00-89</a>
+              </div>
+            </article>
+            <article class="contacts_item flex gap-4 items-start">
+              <i class="icon-plus text-base !text-white"></i>
+              <div class="flex flex-col gap-3">
+                <h3 class="text-base font-medium">Call-центр</h3>
+                <p>Ежедневно с 08:00 до 22:00</p>
+              </div>
+            </article>
+            <article class="contacts_item flex gap-4 items-start">
+              <i class="icon-plus text-base text-white"></i>
+              <div class="flex flex-col gap-3">
+                <h3 class="text-base font-medium">Соц. сети</h3>
+                <i class="icon-instagram text-2.5xl text-[#003459]"></i>
+              </div>
+            </article>
+          </div>
+          <div class="map pb-4">
+            <iframe class="h-[412px] rounded-2xl"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2296.3829157093237!2d69.13119191624013!3d54.86108708032436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43b23a3c21ee7e33%3A0x12be0413b17ea909!2sOnko%20Dispanser!5e0!3m2!1sen!2skz!4v1664532526653!5m2!1sen!2skz"
+              width="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <!-- Footer -->
+
+   <footer class="bg-[#EEFBFF] mt-20">
+    <div class="flex flex-col lg:flex-row lg:flex-wrap justify-between gap-9 container mx-auto px-4 py-14">
+      <div>
+         <a href="/"><img src="./icons/logo.svg" alt=""></a> 
+      </div>
+      <div class="flex flex-col gap-5">
+        <a href="services.html">Услуги</a>
+        <a href="about-us.html">О нас</a>
+        <a href="contacts.html">Контакты</a>
+      </div>
+      <div class="flex flex-col gap-9 justify-start w-[260px] order-2 lg:!order-5 items-start">
+        <button x-on:click="isModal = true;" class="button bg-primary   inline-block px-10">Записаться на приём</button>
+        <i class="icon-instagram text-[28px] text-[#003459]"></i>
+      </div>
+      <div class="flex flex-col gap-3">
+        <div class="font-medium">МРТ</div>
+        <a href="">+7 771 029 00 33</a> 
+        <a href="">50–19–53/54</a> 
+        <p>Пн-Пт: с 08:00 до 22:00</p>
+        <p>Сб: с 08:00 до 20:00</p>
+        <p> Вс: выходной</p>  
+      </div>
+      <div class="flex flex-col gap-3">
+        <div class="font-medium">КТ</div>
+        <a href="">63–00–89</a> 
+        <p>Ежедневно 
+          с 08:00 до 22:00</p>  
+      </div>
+    </div>
+  </footer>
+
+<!-- Footer END -->
+  </div>
+
+  
+
+  <script src="//unpkg.com/alpinejs" defer></script>
+  
+</body>
+
+</html>
