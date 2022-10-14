@@ -39,15 +39,16 @@
         x-on:click="isModal=!isModal"></i>
       <div class="px-4 absolute  lg:max-w-md top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-full ">
         <div class="bg-white rounded-2xl w-full px-5 py-8">
-          <form action="/" class="flex flex-col">
+          <form action="send.php" method="POST" class="flex flex-col">
             <h2 class="font-medium text-lg text-center">Записаться на приём</h2>
             <p class="text-sm text-[#828282] text-center mt-4">Оставьте свои данные и наши специалисты свяжутся с вами
               в ближайшее время</p>
             <input required name="name" class="mt-6 h-[49px] flex pl-4 rounded-xl border-2 border-[#EBEBEB]" type="text"
               placeholder="Введите имя">
+            <input type="hidden" name="action" value="application" />
             <input required name="phone" class="mt-5 h-[49px] flex pl-4 rounded-xl border-2 border-[#EBEBEB]" type="text"
               placeholder="Номер телефона">
-            <select required name="type" class="mt-5 h-[49px] flex pl-4 rounded-xl border-2 border-[#EBEBEB]">
+            <select required name="service_type" class="mt-5 h-[49px] flex pl-4 rounded-xl border-2 border-[#EBEBEB]">
               <option>
                 Выберите томография
               </option>
