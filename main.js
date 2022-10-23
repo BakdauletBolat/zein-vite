@@ -28,8 +28,6 @@ const swiper = new Swiper('.swiper-about-us', {
 });
 
 const swiperLicense = new Swiper('.swiper-license', {
-  // configure Swiper to use modules
-  modules: [Navigation, Pagination],
   pagination: {
     el: '.swiper-pagination',
     bulletClass: 'bslider-bullet',
@@ -40,7 +38,7 @@ const swiperLicense = new Swiper('.swiper-license', {
       slidesPerView: 1
     },
     740: {
-      slidesPerView: 3,
+      slidesPerView: 2,
       spaceBetween: 32
     }
   },

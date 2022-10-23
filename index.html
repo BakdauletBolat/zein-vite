@@ -9,18 +9,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
   <title>Zein</title>
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="stylesheet" href="./icons.css">
-  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/icons.css">
+
 </head>
 
 <body>
+  <div class="fixed bottom-3 right-3 cursor-pointer">
+    <a href="tel:+77710290033" class="w-[52px] flex justify-center items-center hover:bg-[#4EB25A] shadow-md bg-[#66D073] h-[52px]  rounded-full">
+      <img src="/images/whatsapp.png" alt="">
+    </a>
+  </div>
   <div x-data="{
     isModal: false,
     isOpenHeader: false,
@@ -46,8 +48,8 @@
             <input required name="name" class="mt-6 h-[49px] flex pl-4 rounded-xl border-2 border-[#EBEBEB]" type="text"
               placeholder="Введите имя">
             <input type="hidden" name="action" value="application" />
-            <input required name="phone" class="mt-5 h-[49px] flex pl-4 rounded-xl border-2 border-[#EBEBEB]" type="text"
-              placeholder="Номер телефона">
+            <input required name="phone" class="mt-5 h-[49px] flex pl-4 rounded-xl border-2 border-[#EBEBEB]"
+              type="text" placeholder="Номер телефона">
             <select required name="service_type" class="mt-5 h-[49px] flex pl-4 rounded-xl border-2 border-[#EBEBEB]">
               <option>
                 Выберите томография
@@ -226,14 +228,18 @@
           <div>
             <h2 class="main-title pt-0 pb-10">О нас</h2>
             <div class="flex flex-col text-base lg:text-lg gap-5 mb-7">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta laborum atque cum qui error quis,
-                placeat
-                eaque inventore voluptatibus fugiat cumque architecto nihil delectus, molestias maiores officia aperiam
-                accusantium odit.</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta laborum atque cum qui error quis,
-                placeat
-                eaque inventore voluptatibus fugiat cumque architecto nihil delectus, molestias maiores officia aperiam
-                accusantium odit.</p>
+              <p>
+                МРТ И КТ кабинеты компании ТОО «ZEIN INVEST»
+                Начало деятельности МРТ кабинета: Май 2021 года.
+                Начало деятельности КТ кабинета: 15.06.2022 года.
+                Количество проведенных исследований: более 16000.
+                Врачи лучевой диагностики с опытом работы более 25 лет.
+                Результаты будут доступны пациенту уже через 24 часа. Но в экстренных ситуациях они могут быть готовы в
+                течение 2 часов после завершения процедуры.
+                Качественная интерпретация заключения.
+              </p>
+              <p>Работаем 24/7 — без выходных и праздников.</p>
+              <p>Работаем по направлению ОСМС и на платной основе.</p>
             </div>
             <div class="font-medium lg:flex hidden items-center justify-start pb-14 pt-8">
               <p class="text-base pr-[10px] lg:text-lg"><a class="no-underline" href="about-us.html">Подробнее</a></p>
@@ -411,7 +417,6 @@
         </div>
         <div class="flex flex-col gap-3">
           <div class="font-medium">МРТ</div>
-          <a href="">+7 771 029 00 33</a>
           <a href="">50–19–53/54</a>
           <p>Пн-Пт: с 08:00 до 22:00</p>
           <p>Сб: с 08:00 до 20:00</p>
